@@ -1,8 +1,24 @@
 <div class="book__container">
+    <div class="filter__container">
+        <span><i class="fa fa-search"></i></span>
+        <input
+            type="search"
+            class="filter__container__input"
+            autocomplete="off"
+            placeholder="Search..."
+            [(ngModel)]="searchValue"
+        />
+    </div>
+    <br />
+
+    <!-- <input type="text" class="filterSearch" /> -->
     <h3>All Books</h3>
-    <!-- <h3 [class.loading]="(loading$ | async)">Check Color</h3> -->
+
     <div class="container">
-        <div class="container__book" *ngFor="let item of bookItems$ | async">
+        <div
+            class="container__book"
+            *ngFor="let item of bookItems$ | async | filter:searchValue "
+        >
             <h4><b>{{item.title}}</b></h4>
             <p>Authors: {{item.author}}</p>
             <p>Publisher: {{item.publisher}}</p>

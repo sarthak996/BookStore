@@ -1,6 +1,3 @@
-.loading {
-    color: green;
-}
 .book__container {
     padding: 0.5rem;
 }
@@ -19,10 +16,36 @@
     margin: 1rem;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    @media (min-width: 30rem) {
+        width: 100%;
+    }
     @media (min-width: 40rem) {
-        width: 50%;
+        width: 41%;
     }
     @media (min-width: 56rem) {
         width: 44.2%;
     }
+
+    width: 100%;
+}
+
+.filterSearch {
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid black;
+    :focus {
+        border: none !important;
+    }
+}
+
+.filter__container__input {
+    border: none;
+    width: 46%;
+    font-size: 14px;
+    border-bottom: 1px solid #2f4c6a;
+    padding: 7px;
+}
+
+input:focus {
+    outline: none;
 }

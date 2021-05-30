@@ -1,0 +1,80 @@
+<div class="add__container__button">
+    <button class="btn" (click)="toggleModal()">
+        Create New Book
+    </button>
+</div>
+
+<div *ngIf="activateModal" class="modal active" role="alert">
+    <div class="form__container">
+        <h2>Add Books</h2>
+        <form [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+            <div class="form__group">
+                <label>Book Title</label>
+                <input
+                    type="text"
+                    formControlName="title"
+                    [ngClass]="{ 'is-invalid': submitted && f.title.errors }"
+                />
+                <div
+                    *ngIf="submitted && f.title.errors"
+                    class="invalid-feedback"
+                >
+                    <div
+                        *ngIf="f.title.errors.required"
+                        class="invalid-feedback"
+                    >
+                        *Title is required
+                    </div>
+                </div>
+            </div>
+            <div class="form__group">
+                <label>Author Name</label>
+                <input
+                    type="text"
+                    formControlName="author"
+                    [ngClass]="{ 'is-invalid': submitted && f.author.errors }"
+                />
+                <div
+                    *ngIf="submitted && f.author.errors"
+                    class="invalid-feedback"
+                >
+                    <div
+                        *ngIf="f.author.errors.required"
+                        class="invalid-feedback"
+                    >
+                        *Author Name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form__group">
+                <label>Publisher Name</label>
+                <input
+                    type="text"
+                    formControlName="publisher"
+                    [ngClass]="{ 'is-invalid': submitted && f.publisher.errors }"
+                />
+                <div
+                    *ngIf="submitted && f.publisher.errors"
+                    class="invalid-feedback"
+                >
+                    <div
+                        *ngIf="f.publisher.errors.required"
+                        class="invalid-feedback"
+                    >
+                        *Publisher Name is required
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="form__group"
+                style="text-align: center; padding-top: 0.4rem;"
+            >
+                <button class="btn">
+                    Add Book
+                </button>
+            </div>
+        </form>
+    </div>
+    <button class="form__close" role="button" (click)="toggleModal()">X</button>
+</div>

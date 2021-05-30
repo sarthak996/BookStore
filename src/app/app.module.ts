@@ -12,13 +12,25 @@ import { BookReducer } from './store/reducers/books.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { HeaderComponent } from './header/header.component';
+import { BookAddItemComponent } from './book-add-item/book-add-item.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
-    declarations: [AppComponent, BookItemsComponent, HeaderComponent],
+    declarations: [
+        AppComponent,
+        BookItemsComponent,
+        HeaderComponent,
+        BookAddItemComponent,
+        FilterPipe,
+    ],
     imports: [
         HttpClientModule,
         BrowserModule,
         AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
         StoreDevtoolsModule.instrument({
             maxAge: 25,
             logOnly: environment.production,

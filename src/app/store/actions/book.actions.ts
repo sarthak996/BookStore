@@ -5,6 +5,7 @@ export enum BookActionTypes {
     LOAD_BOOKS = '[BOOKS] Load Shopping',
     LOAD_BOOKS_SUCCESS = '[BOOKS] Load Shopping Success',
     LOAD_BOOKS_FAILURE = '[BOOKS] Load Shopping Failure',
+    ADD_BOOKS = '[BOOKS] Add Item',
 }
 
 export class LoadBookAction implements Action {
@@ -21,7 +22,14 @@ export class LoadBookFailureAction implements Action {
     constructor(public payload: Error) {}
 }
 
+export class AddBookAction implements Action {
+    readonly type = BookActionTypes.ADD_BOOKS;
+
+    constructor(public payload: BookItem) {}
+}
+
 export type BookAction =
     | LoadBookAction
     | LoadBookSuccessAction
-    | LoadBookFailureAction;
+    | LoadBookFailureAction
+    | AddBookAction;

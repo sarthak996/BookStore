@@ -7,6 +7,7 @@ import {
     BookActionTypes,
     LoadBookSuccessAction,
     LoadBookFailureAction,
+    AddBookAction,
 } from '../actions/book.actions';
 import { of } from 'rxjs';
 import { BookService } from 'src/app/services/book.service';

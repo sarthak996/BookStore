@@ -13,15 +13,6 @@ const initialState: BookState = {
     error: undefined,
 };
 
-// const initialState: Array<BookItem> = [
-//     {
-//         id: '1775935f-36fd-467e-a667-09f95b917f6d',
-//         title: 'Sarthak Books',
-//         author: 'Sarthak Sethi',
-//         publishedDate: new Date(),
-//     },
-// ];
-
 export function BookReducer(
     state: BookState = initialState,
     action: BookAction
@@ -45,6 +36,14 @@ export function BookReducer(
                 error: action.payload,
                 loading: false,
             };
+
+        case BookActionTypes.ADD_BOOKS:
+            return {
+                ...state,
+                list: [...state.list, action.payload],
+                loading: false,
+            };
+
         default:
             return state;
     }

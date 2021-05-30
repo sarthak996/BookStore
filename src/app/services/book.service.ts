@@ -31,17 +31,4 @@ export class BookService {
             })
         );
     }
-    // addShoppingItem(shoppingItem: ShoppingItem) {
-    //   return this.http.post(this.BOOK_URL, shoppingItem)
-    //     .pipe(
-    //       delay(500)
-    //     )
-    // }
-
-    // deleteShoppingItem(id: string) {
-    //   return this.http.delete(`${this.BOOK_URL}/${id}`)
-    //     .pipe(
-    //       delay(500)
-    //     )
-    // }
 }
